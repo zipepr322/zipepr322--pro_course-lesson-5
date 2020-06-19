@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson 5</title>
+</head>
+<body>
+    <script>
+        someArr=[1,2,15,17,27,32,-50,'sdfsdf'];
+        someArr1=[10,20,150,170,270,320,77];
+        someArr2=[3,942,19,17,85,18,220];
+        someArr4=[0,1200,'dfsdf123',25];
+        // Написать функцию getMaxs(args), где args – любое количество массивов.
+        // Функция должна вернуть максимумы всех переданных массивов в виде строки, через разделитель '; '.
+        function getMaxValue(args) {
+                maxArrayValue=0;
+                numberValues =[];
+                for (i=0, k=0; i<arguments.length; k++, i++,numberValues.push(maxArrayValue)){
+
+                      if (typeof arguments[i]==='object') {
+
+                          for ( j = 0  ; j < arguments[k].length; j++) {
+
+                              if (maxArrayValue < arguments[k][j] && typeof arguments[k][j] === 'number'  ) {
+                                  maxArrayValue = arguments[k][j] ;
+
+                              }
+
+                          }
+
+                      }
+
+                }
+
+                return (numberValues.join(';'))
+
+        }
+
+        console.log("Максимум каждого из массивов равен   "+getMaxValue(someArr,someArr1,someArr2,someArr4));
+
+    </script>
+</body>
+</html>
